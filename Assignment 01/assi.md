@@ -33,18 +33,34 @@ int main() {
 
 ## Problem No : 02 (CLASS & OBJECT)
 ## Code with Error:
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
+![image](https://github.com/user-attachments/assets/900c74c2-891b-40bb-9a13-6e04ef28470c)
 ## Discussion :
+In this code we call the data field with class name not with object so that the error occure because class is just a template it does not store data .So to overcome the error we have to call attribute with object
 ## Code with No Error:
 
 ```
+#include <iostream>
+#include <string>
+class MyClass {
+  public:
+    int myNum;
+    std::string myString;
+};
+int main() {
+  MyClass myObj;
+  myObj.myNum = 15;
+  myObj.myString = "Some text";
+  std::cout << myObj.myNum << "\n";
+  std::cout << myObj.myString;
+  return 0;
+}
 
 
 ```
 
 ### Output:
+![image](https://github.com/user-attachments/assets/001c0dc4-4935-4112-ab5f-35ca86657055)
 
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
 
 ## Problem No : 03 (CLASS & OBJECT)
 ## Code with Error:
