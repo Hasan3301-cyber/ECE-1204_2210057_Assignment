@@ -1,7 +1,8 @@
 ## Problem No : 01 (CLASS & OBJECT)
 ## Code with Error:
 ![image](https://github.com/user-attachments/assets/50f8cbf9-7918-460a-9889-80434778469b)
-## Discussion :In this code error occurs due to miss Namespace Prefix std.Without the std:: prefix or a using namespace std; directive, the compiler will not recognize string and cout.
+## Discussion :
+In this code error occurs due to miss Namespace Prefix std.Without the std:: prefix or a using namespace std; directive, the compiler will not recognize string and cout.
 ## Code with No Error:
 
 ```
