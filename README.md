@@ -22,5 +22,5 @@ Rajshahi - 6204
 
 | Assignment No. |  Link   |
 |---------|--------|
-| 01      | [Lab 01](https://github.com/Huzayfa718/ECE-1204_2210048/blob/main/Lab%2001/Experiments.md) |
+| 01      | [Assignment 01](https://github.com/Huzayfa718/ECE-1204_2210048/blob/main/Lab%2001/Experiments.md) |
 
