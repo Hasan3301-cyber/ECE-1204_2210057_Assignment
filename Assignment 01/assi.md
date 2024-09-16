@@ -31,6 +31,7 @@ int main() {
 ![image](https://github.com/user-attachments/assets/417f0303-fbc8-4423-9639-59772d1c68ea)
 
 
+
 ## Problem No : 02 (CLASS & OBJECT)
 ## Code with Error:
 ![image](https://github.com/user-attachments/assets/900c74c2-891b-40bb-9a13-6e04ef28470c)
@@ -60,6 +61,7 @@ int main() {
 
 ### Output:
 ![image](https://github.com/user-attachments/assets/001c0dc4-4935-4112-ab5f-35ca86657055)
+
 
 
 ## Problem No : 03 (ACCESS SPECIFIER)
@@ -96,6 +98,7 @@ int main() {
 ![image](https://github.com/user-attachments/assets/4c1a1b17-2965-492a-aaa6-2f356722ac39)
 
 
+
 ## Problem No : 04 (FRIEND FUNCTION)
 ## Code with Error:
 ![image](https://github.com/user-attachments/assets/8fb9c69f-75e3-4c8a-a052-9d14788439e0)
@@ -128,6 +131,7 @@ int main() {
 
 ### Output:
 ![image](https://github.com/user-attachments/assets/eae0c88a-f5c6-4575-9cf8-7fe764a28bb3)
+
 
 
 ## Problem No : 05 (FRIEND FUNCTION)
@@ -164,168 +168,3 @@ int main() {
 
 ![image](https://github.com/user-attachments/assets/ecde9d78-a916-4de5-9a32-573ef66c1f93)
 
-
-## Problem No : 06 (CLASS & OBJECT)
-## Code with Error:
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-## Discussion :
-## Code with No Error:
-
-```
-
-
-```
-
-### Output:
-
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-
-## Problem No : 07 (CLASS & OBJECT)
-## Code with Error:
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-## Discussion :
-## Code with No Error:
-
-```
-
-
-```
-
-### Output:
-
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-
-## Problem No : 08 (CLASS & OBJECT)
-## Code with Error:
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-## Discussion :
-## Code with No Error:
-
-```
-
-
-```
-
-### Output:
-
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-
-## Problem No : 09 (CLASS & OBJECT)
-## Code with Error:
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-## Discussion :
-## Code with No Error:
-
-```
-
-
-```
-
-### Output:
-
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-
-## Problem No : 10 (CLASS & OBJECT)
-## Code with Error:
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-## Discussion :
-## Code with No Error:
-
-```
-
-
-```
-
-### Output:
-
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-
-## Problem No : 11 (CLASS & OBJECT)
-## Code with Error:
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-## Discussion :
-## Code with No Error:
-
-```
-
-
-```
-
-### Output:
-
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-
-## Problem No : 12 (CLASS & OBJECT)
-## Code with Error:
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-## Discussion :
-## Code with No Error:
-
-```
-
-
-```
-
-### Output:
-
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-
-## Problem No : 01 (CLASS & OBJECT)
-## Code with Error:
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-## Discussion :
-## Code with No Error:
-
-```
-
-
-```
-
-### Output:
-
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-
-## Problem No : 01 (CLASS & OBJECT)
-## Code with Error:
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-## Discussion :
-## Code with No Error:
-
-```
-
-
-```
-
-### Output:
-
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-
-## Problem No : 01 (CLASS & OBJECT)
-## Code with Error:
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-## Discussion :
-## Code with No Error:
-
-```
-
-
-```
-
-### Output:
-
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-
-## Problem No : 01 (CLASS & OBJECT)
-## Code with Error:
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
-## Discussion :
-## Code with No Error:
-
-```
-
-
-```
-
-### Output:
-
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
