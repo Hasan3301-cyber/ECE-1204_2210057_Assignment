@@ -62,20 +62,41 @@ int main() {
 ![image](https://github.com/user-attachments/assets/001c0dc4-4935-4112-ab5f-35ca86657055)
 
 
-## Problem No : 03 (CLASS & OBJECT)
+## Problem No : 03 (ACCESS SPECIFIER)
 ## Code with Error:
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
+![image](https://github.com/user-attachments/assets/fd68f019-0926-450e-b0f9-e02665e949bd)
 ## Discussion :
+y is not allowed because y is private and cannot be accessed directly from outside the class. This will result in a compilation error.to solve this error we have to use public set and get function
 ## Code with No Error:
 
 ```
+#include <iostream>
+using namespace std;
+class MyClass {
+  public:
+    int x;
+    void setY(int value) {
+        y = value;}
+    int getY() const {
+        return y;
+    }
+  private:
+    int y;
+};
+int main() {
+  MyClass myObj;
+  myObj.x = 25;
+  myObj.setY(50);
+  cout << myObj.getY();
+  return 0;
+}
 
 
 ```
 
 ### Output:
+![image](https://github.com/user-attachments/assets/4c1a1b17-2965-492a-aaa6-2f356722ac39)
 
-![image](https://github.com/user-attachments/assets/210707f8-eed5-4417-b7a6-3ecd9db80da5)
 
 ## Problem No : 04 (CLASS & OBJECT)
 ## Code with Error:
