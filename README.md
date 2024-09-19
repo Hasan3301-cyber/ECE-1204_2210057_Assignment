@@ -21,7 +21,7 @@ Rajshahi - 6204
 
 ## Index
 
-| Assignment No. |  Link   |
-|---------|--------|
-| 01      | [Assignment 01](https://github.com/Hasan3301-cyber/ECE-1204_2210057_Assignment/blob/main/Assignment%2001/assi.md) |
+| Assignment No. | Title |  Link   |
+|---------|--------| -------- |
+| 01      | Find out the error in code with reason and fix it | [Assignment 01](https://github.com/Hasan3301-cyber/ECE-1204_2210057_Assignment/blob/main/Assignment%2001/assi.md) |
 
