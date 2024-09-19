@@ -4,7 +4,8 @@
 
 ## Problem No : 01 (CLASS & OBJECT)
 ## Code with Error:
-![image](https://github.com/user-attachments/assets/a7aa5b36-9706-461e-b279-56cc27f20f9e)
+![error1](https://github.com/user-attachments/assets/831c8e9f-2f4b-4d8f-9d00-c58de5d5773e)
+
 ## Discussion :
 In this code error occurs due to miss Namespace Prefix std.Without the std:: prefix or a using namespace std; directive, the compiler will not recognize string and cout.
 ## Code with No Error:
@@ -32,13 +33,15 @@ int main() {
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/417f0303-fbc8-4423-9639-59772d1c68ea)
+![Output 1](https://github.com/user-attachments/assets/e3194c8b-946b-41df-b3a7-5c7851166dc4)
+
 
 
 
 ## Problem No : 02 (CLASS & OBJECT)
 ## Code with Error:
-![image](https://github.com/user-attachments/assets/900c74c2-891b-40bb-9a13-6e04ef28470c)
+![error 2](https://github.com/user-attachments/assets/5f4f760f-7c63-4beb-a723-fb40f8c44289)
+
 ## Discussion :
 In this code we call the data field with class name not with object so that the error occure because class is just a template it does not store data .So to overcome the error we have to call attribute with object
 ## Code with No Error:
@@ -137,7 +140,8 @@ int main() {
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/eae0c88a-f5c6-4575-9cf8-7fe764a28bb3)
+![o4](https://github.com/user-attachments/assets/a69dc1eb-3277-465a-8c69-7d7169232ada)
+
 
 
 
