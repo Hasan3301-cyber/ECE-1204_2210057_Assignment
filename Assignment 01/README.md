@@ -71,7 +71,8 @@ int main() {
 
 ## Problem No : 03 (ACCESS SPECIFIER)
 ## Code with Error:
-![image](https://github.com/user-attachments/assets/fd68f019-0926-450e-b0f9-e02665e949bd)
+![error 3](https://github.com/user-attachments/assets/0935578c-e300-4d8f-bb09-287fe346c890)
+
 ## Discussion :
 y is not allowed because y is private and cannot be accessed directly from outside the class. This will result in a compilation error.to solve this error we have to use public set and get function
 ## Code with No Error:
@@ -142,7 +143,8 @@ int main() {
 
 ## Problem No : 05 (FRIEND FUNCTION)
 ## Code with Error:
-![image](https://github.com/user-attachments/assets/9fa0e5b1-94b0-4ca1-a6d4-7a386920699b)
+![error 5](https://github.com/user-attachments/assets/200068bc-3d1c-45c8-b126-9e4b5188f9cc)
+
 ## Discussion :
 Object does not pass to friend function in this code.In friend function we need to pass object of that specific function because friend function need access to private or protected data of an object as friend function not a member function ,they don't have an implicit object
 ## Code with No Error:
@@ -172,6 +174,7 @@ int main() {
 
 ### Output:
 
-![image](https://github.com/user-attachments/assets/ecde9d78-a916-4de5-9a32-573ef66c1f93)
+![output 5](https://github.com/user-attachments/assets/9ce85f69-be5b-400d-8b98-c1f6ab1c525c)
+
 
 
