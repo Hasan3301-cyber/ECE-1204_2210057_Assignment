@@ -228,9 +228,10 @@ int main() {
 ### Output:
 ![image](https://github.com/user-attachments/assets/5078e85b-6d26-4fbd-8e4b-9785ea0df622)
 
+## Problem No : 04
+How do friend operator functions differ from member operator functions?
 
-
-
-
+### Answer :
+Friend operator functions differ from member operator functions primarily in how they access class members and the types of operands they can handle. A member operator function is a function that belongs to a class and is called on an instance of that class, with the left-hand operand being the object itself (i.e., this pointer). In contrast, a friend operator function is defined outside the class but is granted access to the class’s private and protected members. It does not have a this pointer, so it can operate on multiple objects from different classes or types, making it more flexible for operations where the left-hand operand is not necessarily of the class type. This allows expressions like int + MyClass, which would not be possible with member operator functions. Essentially, friend functions provide broader applicability, while member functions are more intrinsic to the class.
 
 
