@@ -1,7 +1,7 @@
 # Assignment No: 03
 # Date of Submission :15-10-2024
 # Title : Find out the error in code with reason and Fix it
-## Operator Overloading
+## 1. Operator Overloading
 ## Problem No : 01 
 Overload the >> and << shift operator relative to the coord class so that the following
 types of operations are allowed:
@@ -263,3 +263,267 @@ Overloading the assignment operator (operator=) is necessary when a class manage
 Can operator=() be a friend function?
 ### Answer :
 No, the assignment operator (operator=()) cannot be a friend function; it must be a member function. This is because the assignment operator modifies the internal state of the left-hand side object, which must already exist. Only member functions have direct access to an object's private and protected members, allowing the modification of the object's internal state. A friend function does not have the same privileges for modifying the left-hand side object in an assignment, which is why operator=() must be defined as a member function.
+# 2. Inheritance
+
+## Problem No : 01
+Create a generic base class called building that stores the number of floors a building has,
+the number of rooms, and its total square footage. Create derived class called house that
+inherits building and also stores the number of bedrooms and the number of bathrooms.
+Next, create a derived class called office that inherits building and also stores the number
+of fire extinguishers and the number of telephones.
+## Code :
+
+```
+#include <iostream>
+using namespace std;
+class building
+{
+protected:
+    int floor;
+    int room;
+    double sqr;
+
+public:
+    building(int x, int y, double z)
+    {
+        floor = x;
+        room = y;
+        sqr = z;
+    }
+
+    void display()
+    {
+        cout << "Floor: " << floor << "\nRooms: " << room << "\nSquare Footage: " << sqr << endl;
+    }
+};
+
+class house : public building
+{
+private:
+    int bedroom;
+    int bathroom;
+
+public:
+    house(int x, int y, double z, int a, int b)
+        : building(x, y, z)
+    {
+
+        bedroom=a;
+        bathroom=b;
+    }
+
+    void display()
+    {
+
+        cout << "Floors: " << floor << "\nRooms: " << room << "\nSquare Footage: " << sqr << endl;
+        cout << "Bedroom: " << bedroom << "\nBathroom: " << bathroom << endl;
+    }
+};
+
+class office : public building
+{
+private:
+    int extinguisher ;
+    int telephone;
+
+public:
+    office(int x, int y, double z, int a, int b)
+        : building(x, y, z)
+    {
+        extinguisher=a;
+        telephone=b;
+    }
+
+    void display()
+    {
+        building::display();
+        cout << "Fire Extinguisher: " << extinguisher << "\nTelephones: " << telephone << endl;
+    }
+};
+
+int main()
+{
+
+    house a(2, 5, 2500.0, 3, 2);
+    cout << "House Info: " << endl;
+    a.display();
+    cout << endl;
+
+    office b(5, 20, 10000.0, 15, 50);
+    cout << "Office Info: " << endl;
+    b.display();
+
+    return 0;
+}
+
+
+```
+
+### Output:
+![image](https://github.com/user-attachments/assets/f575d429-aeab-43be-be61-a043d8d318e9)
+
+
+## Problem No : 03
+Rewrite your answer to Question 2 so that it uses reference parameters  instead  of  value   
+parameters to the operator functions. (Hint: You will need to use friend functions for the
+increment and decrement operators.)
+## Code :
+
+
+```
+#include <iostream>
+using namespace std;
+
+class three_d {
+    int x, y, z;
+
+public:
+    three_d(int i, int j, int k) {
+        x = i;
+        y = j;
+        z = k;
+    }
+    three_d() {
+        x = 0;
+        y = 0;
+        z = 0;
+    }
+
+    void get(int &i, int &j, int &k) {
+        i = x;
+        j = y;
+        k = z;
+    }
+    three_d& operator+(const three_d &ob) {
+        x =x+ob.x;
+        y =y+ ob.y;
+        z =z+ ob.z;
+        return *this;
+    }
+    three_d& operator-(const three_d &ob) {
+        x =x+ ob.x;
+        y =y+ ob.y;
+        z =z+ ob.z;
+        return *this;
+    }
+    friend three_d& operator++(three_d &o) {
+        ++o.x;
+        ++o.y;
+        ++o.z;
+        return o;
+    }
+    friend three_d& operator--(three_d &o) {
+        --o.x;
+        --o.y;
+        --o.z;
+        return o;
+    }
+};
+
+int main() {
+    three_d obj1(10, 20, 30), obj2(5, 15, 25), obj3;
+    int x, y, z;
+    obj1 + obj2;
+    obj1.get(x, y, z);
+    cout << "After addition : x = " << x << ", y = " << y << ", z = " << z << endl;
+    obj1 - obj2;
+    obj1.get(x, y, z);
+    cout << "After subtraction : x = " << x << ", y = " << y << ", z = " << z << endl;
+    ++obj1;
+    obj1.get(x, y, z);
+    cout << "After prefix increment : x = " << x << ", y = " << y << ", z = " << z << endl;
+    --obj1;
+    obj1.get(x, y, z);
+    cout << "After prefix decrement : x = " << x << ", y = " << y << ", z = " << z << endl;
+
+    return 0;
+}
+
+
+```
+
+### Output:
+![image](https://github.com/user-attachments/assets/5078e85b-6d26-4fbd-8e4b-9785ea0df622)
+
+## Problem No : 03
+Rewrite your answer to Question 2 so that it uses reference parameters  instead  of  value   
+parameters to the operator functions. (Hint: You will need to use friend functions for the
+increment and decrement operators.)
+## Code :
+
+
+```
+#include <iostream>
+using namespace std;
+
+class three_d {
+    int x, y, z;
+
+public:
+    three_d(int i, int j, int k) {
+        x = i;
+        y = j;
+        z = k;
+    }
+    three_d() {
+        x = 0;
+        y = 0;
+        z = 0;
+    }
+
+    void get(int &i, int &j, int &k) {
+        i = x;
+        j = y;
+        k = z;
+    }
+    three_d& operator+(const three_d &ob) {
+        x =x+ob.x;
+        y =y+ ob.y;
+        z =z+ ob.z;
+        return *this;
+    }
+    three_d& operator-(const three_d &ob) {
+        x =x+ ob.x;
+        y =y+ ob.y;
+        z =z+ ob.z;
+        return *this;
+    }
+    friend three_d& operator++(three_d &o) {
+        ++o.x;
+        ++o.y;
+        ++o.z;
+        return o;
+    }
+    friend three_d& operator--(three_d &o) {
+        --o.x;
+        --o.y;
+        --o.z;
+        return o;
+    }
+};
+
+int main() {
+    three_d obj1(10, 20, 30), obj2(5, 15, 25), obj3;
+    int x, y, z;
+    obj1 + obj2;
+    obj1.get(x, y, z);
+    cout << "After addition : x = " << x << ", y = " << y << ", z = " << z << endl;
+    obj1 - obj2;
+    obj1.get(x, y, z);
+    cout << "After subtraction : x = " << x << ", y = " << y << ", z = " << z << endl;
+    ++obj1;
+    obj1.get(x, y, z);
+    cout << "After prefix increment : x = " << x << ", y = " << y << ", z = " << z << endl;
+    --obj1;
+    obj1.get(x, y, z);
+    cout << "After prefix decrement : x = " << x << ", y = " << y << ", z = " << z << endl;
+
+    return 0;
+}
+
+
+```
+
+### Output:
+![image](https://github.com/user-attachments/assets/5078e85b-6d26-4fbd-8e4b-9785ea0df622)
+
