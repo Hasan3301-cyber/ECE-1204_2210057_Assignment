@@ -110,11 +110,11 @@ public:
         temp.z = z + ob.z;
         return temp;
     }
-    three_d operator-(const three_d &obj) {
+    three_d operator-(const three_d &ob) {
         three_d temp;
-        temp.x = x - obj.x;
-        temp.y = y - obj.y;
-        temp.z = z - obj.z;
+        temp.x = x - ob.x;
+        temp.y = y - ob.y;
+        temp.z = z - ob.z;
         return temp;
     }
 
