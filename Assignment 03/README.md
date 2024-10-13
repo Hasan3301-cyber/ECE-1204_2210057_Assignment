@@ -363,167 +363,32 @@ int main()
 ![image](https://github.com/user-attachments/assets/f575d429-aeab-43be-be61-a043d8d318e9)
 
 
-## Problem No : 03
-Rewrite your answer to Question 2 so that it uses reference parameters  instead  of  value   
-parameters to the operator functions. (Hint: You will need to use friend functions for the
-increment and decrement operators.)
-## Code :
+## Problem No : 02
+When a base class is inherited as public by the derived class, what happens to its public
+members? What happens to its private members? If the base is inherited as private by
+the derived class, what happens to its public and private members?
+## Answer :
+
+### For Public Inheritance:
+### Public Members of the base class: 
+Remain public in the derived class. They can be accessed by the derived class and by external code that uses objects of the derived class.
+### Private Members of the base class: 
+Remain private and cannot be accessed directly by the derived class or external code. They can only be accessed via public or protected methods provided by the base class.
+### For Private Inheritance:
+### Public Members of the base class: 
+Become private in the derived class. They can still be accessed by the derived class, but not by external code(Like from main class).
+### Private Members of the base class: 
+Remain private and cannot be accessed by the derived class or external code. Access is possible only through public or protected methods of the base class.
 
 
-```
-#include <iostream>
-using namespace std;
-
-class three_d {
-    int x, y, z;
-
-public:
-    three_d(int i, int j, int k) {
-        x = i;
-        y = j;
-        z = k;
-    }
-    three_d() {
-        x = 0;
-        y = 0;
-        z = 0;
-    }
-
-    void get(int &i, int &j, int &k) {
-        i = x;
-        j = y;
-        k = z;
-    }
-    three_d& operator+(const three_d &ob) {
-        x =x+ob.x;
-        y =y+ ob.y;
-        z =z+ ob.z;
-        return *this;
-    }
-    three_d& operator-(const three_d &ob) {
-        x =x+ ob.x;
-        y =y+ ob.y;
-        z =z+ ob.z;
-        return *this;
-    }
-    friend three_d& operator++(three_d &o) {
-        ++o.x;
-        ++o.y;
-        ++o.z;
-        return o;
-    }
-    friend three_d& operator--(three_d &o) {
-        --o.x;
-        --o.y;
-        --o.z;
-        return o;
-    }
-};
-
-int main() {
-    three_d obj1(10, 20, 30), obj2(5, 15, 25), obj3;
-    int x, y, z;
-    obj1 + obj2;
-    obj1.get(x, y, z);
-    cout << "After addition : x = " << x << ", y = " << y << ", z = " << z << endl;
-    obj1 - obj2;
-    obj1.get(x, y, z);
-    cout << "After subtraction : x = " << x << ", y = " << y << ", z = " << z << endl;
-    ++obj1;
-    obj1.get(x, y, z);
-    cout << "After prefix increment : x = " << x << ", y = " << y << ", z = " << z << endl;
-    --obj1;
-    obj1.get(x, y, z);
-    cout << "After prefix decrement : x = " << x << ", y = " << y << ", z = " << z << endl;
-
-    return 0;
-}
-
-
-```
-
-### Output:
-![image](https://github.com/user-attachments/assets/5078e85b-6d26-4fbd-8e4b-9785ea0df622)
 
 ## Problem No : 03
-Rewrite your answer to Question 2 so that it uses reference parameters  instead  of  value   
-parameters to the operator functions. (Hint: You will need to use friend functions for the
-increment and decrement operators.)
-## Code :
+Explain what protected means. (Be sure to explain what it means both when referring
+to members of a class and when it is used as an inheritance access specifier.)
+## Answer :
+### Protected Members of a Class:
+When a class member (either a variable or a function) is declared as protected, it is accessible only within the class itself and any of its derived (child) classes. This means that while the member remains hidden from outside access like private members, derived classes can still directly use or modify it. This gives derived classes controlled access to important data or functionality without exposing those details to other parts of the program. For example, if a base class has a protected member, a derived class can access it to enhance or extend its behavior while keeping the internal details hidden from external users.
+### Protected as an Inheritance Access Specifier:
+When protected is used as an inheritance specifier (i.e., class Derived : protected Base), it determines how the base class's members are inherited by the derived class. In this case, all public and protected members of the base class become protected in the derived class, meaning they can be accessed within the derived class and its children but are not accessible from outside. This form of inheritance is useful when you want to allow a derived class to utilize the base class’s functionality internally while keeping those details hidden from other parts of the program. Private members of the base class, however, remain inaccessible to the derived class, regardless of the inheritance specifier.
 
-
-```
-#include <iostream>
-using namespace std;
-
-class three_d {
-    int x, y, z;
-
-public:
-    three_d(int i, int j, int k) {
-        x = i;
-        y = j;
-        z = k;
-    }
-    three_d() {
-        x = 0;
-        y = 0;
-        z = 0;
-    }
-
-    void get(int &i, int &j, int &k) {
-        i = x;
-        j = y;
-        k = z;
-    }
-    three_d& operator+(const three_d &ob) {
-        x =x+ob.x;
-        y =y+ ob.y;
-        z =z+ ob.z;
-        return *this;
-    }
-    three_d& operator-(const three_d &ob) {
-        x =x+ ob.x;
-        y =y+ ob.y;
-        z =z+ ob.z;
-        return *this;
-    }
-    friend three_d& operator++(three_d &o) {
-        ++o.x;
-        ++o.y;
-        ++o.z;
-        return o;
-    }
-    friend three_d& operator--(three_d &o) {
-        --o.x;
-        --o.y;
-        --o.z;
-        return o;
-    }
-};
-
-int main() {
-    three_d obj1(10, 20, 30), obj2(5, 15, 25), obj3;
-    int x, y, z;
-    obj1 + obj2;
-    obj1.get(x, y, z);
-    cout << "After addition : x = " << x << ", y = " << y << ", z = " << z << endl;
-    obj1 - obj2;
-    obj1.get(x, y, z);
-    cout << "After subtraction : x = " << x << ", y = " << y << ", z = " << z << endl;
-    ++obj1;
-    obj1.get(x, y, z);
-    cout << "After prefix increment : x = " << x << ", y = " << y << ", z = " << z << endl;
-    --obj1;
-    obj1.get(x, y, z);
-    cout << "After prefix decrement : x = " << x << ", y = " << y << ", z = " << z << endl;
-
-    return 0;
-}
-
-
-```
-
-### Output:
-![image](https://github.com/user-attachments/assets/5078e85b-6d26-4fbd-8e4b-9785ea0df622)
 
