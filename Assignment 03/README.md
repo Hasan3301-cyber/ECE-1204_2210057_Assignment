@@ -370,14 +370,14 @@ the derived class, what happens to its public and private members?
 ## Answer :
 
 ### For Public Inheritance:
-### Public Members of the base class: 
+#### Public Members of the base class: 
 Remain public in the derived class. They can be accessed by the derived class and by external code that uses objects of the derived class.
-### Private Members of the base class: 
+#### Private Members of the base class: 
 Remain private and cannot be accessed directly by the derived class or external code. They can only be accessed via public or protected methods provided by the base class.
 ### For Private Inheritance:
-### Public Members of the base class: 
+#### Public Members of the base class: 
 Become private in the derived class. They can still be accessed by the derived class, but not by external code(Like from main class).
-### Private Members of the base class: 
+#### Private Members of the base class: 
 Remain private and cannot be accessed by the derived class or external code. Access is possible only through public or protected methods of the base class.
 
 
