@@ -6,7 +6,8 @@
 Overload the >> and << shift operator relative to the coord class so that the following
 types of operations are allowed:
 
-ob << integer
+ob << integer 
+        
 ob >> integer
 
 Make sure your operations shift the x and y values by the amount specified.
@@ -62,7 +63,7 @@ int main() {
 
 ## Problem No : 02 
 Given the class
-
+```
 class three_d
 {
 int x, y, z;
@@ -77,7 +78,7 @@ void get (int &i, int &j, int &k)
 i = x; j = y; k = z;
 }
 };
-
+```
 overload the +, -, ++, and – operators for this class. (For the increment and decrement
 operators, overload only the prefix form.)
 
