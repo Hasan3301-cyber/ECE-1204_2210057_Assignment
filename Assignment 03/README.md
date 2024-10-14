@@ -677,6 +677,6 @@ int main() {
 ![image](https://github.com/user-attachments/assets/2d04002f-129c-4871-87fe-f7348047bd96)
 
 ### Discussion:
-The issue in your code is caused by multiple inheritance. Both the motorized and road_use classes inherit from vehicle, leading to ambiguity when the derived class car tries to access the members of vehicle. Specifically, this causes the showv() method in car to be ambiguous. To resolve this issue, you can use virtual inheritance to ensure that only one instance of the vehicle class is shared by both motorized and road_use when inherited by car.
+The issue in this code is caused by multiple inheritance. Both the motorized and road_use classes inherit from vehicle, leading to ambiguity when the derived class car tries to access the members of vehicle. Specifically, this causes the showv() method in car to be ambiguous. To resolve this issue, you can use virtual inheritance to ensure that only one instance of the vehicle class is shared by both motorized and road_use when inherited by car.
 
 
