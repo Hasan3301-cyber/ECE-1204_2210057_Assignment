@@ -391,4 +391,292 @@ When a class member (either a variable or a function) is declared as protected, 
 ### Protected as an Inheritance Access Specifier:
 When protected is used as an inheritance specifier (i.e., class Derived : protected Base), it determines how the base class's members are inherited by the derived class. In this case, all public and protected members of the base class become protected in the derived class, meaning they can be accessed within the derived class and its children but are not accessible from outside. This form of inheritance is useful when you want to allow a derived class to utilize the base class’s functionality internally while keeping those details hidden from other parts of the program. Private members of the base class, however, remain inaccessible to the derived class, regardless of the inheritance specifier.
 
+## Problem No : 04
+When one class inherits another, when are the classes’ constructors called? When are
+their destructors called?
+## Answer :
+When one class inherits another, the constructors and destructors of both classes are called in a specific order. First, when an object of the derived class is created, the constructor of the base class is called before the constructor of the derived class. This happens because the derived class depends on the proper initialization of the base class before it can be constructed. The base class's constructor is responsible for setting up any base-level attributes or behaviors that the derived class may build upon.
+Similarly, when an object of the derived class is destroyed, the destructors are called in the reverse order: the destructor of the derived class is called first, followed by the destructor of the base class. This ensures that any resources or attributes specific to the derived class are cleaned up before the base class's cleanup occurs. Thus, constructors are called in a base-to-derived order, while destructors are called in a derived-to-base order.
+
+## Problem No : 05 
+Given this skeleton, fill in the details as indicated in the comments:
+```
+# include <iostream >
+using namespace std;
+class planet
+{
+protected :
+double distance ; // miles from the sun
+int revolve ; // in days
+public :
+planet ( double d, int r) { distance = d; revolve = r; }
+};
+class earth : public planet
+{
+double circumference ; // circumference of orbit
+public :
+/*
+Create earth ( double d, int r). Have it pass the
+distance and days of revolution back to planet .
+Have it compute the circumference of the orbit .
+( Hint : circumference = 2r *3.1416.)
+*/
+/*
+Create a function called show () that displays the
+information .
+*/
+};
+int main ()
+{
+earth ob (93000000 , 365) ;
+ob. show ();
+return 0;
+}
+```
+
+## Code :
+
+```
+#include <iostream>
+using namespace std;
+class planet
+{
+protected:
+    double distance;
+    int revolve;
+
+public:
+    planet(double d, int r)
+    {
+        distance = d;
+        revolve = r;
+    }
+};
+
+class earth : public planet
+{
+    double cir;
+
+public:
+    earth(double d, int r) : planet(d, r)
+    {
+        cir = 2 * 3.1416 * distance;
+    }
+    void show()
+    {
+        cout << "Distance from the sun: " << distance << " miles" << endl;
+        cout << "Revolution period: " << revolve << " days" << endl;
+        cout << "Circumference of orbit: " << cir << endl;
+    }
+};
+
+int main()
+{
+    earth ob(9300000, 365);
+    ob.show();
+
+    return 0;
+}
+
+
+
+```
+
+### Output:
+![Output 5](https://github.com/user-attachments/assets/a8136454-9348-45f6-b99e-028617ca5c88)
+
+
+
+
+## Problem No : 06
+Fix the following program
+```
+/*
+A variation on the vehicle hierarchy . But
+this program contains an error . Fix it. Hind :
+try compiling it as is and observe the error
+messages .
+*/
+# include <iostream >
+using namespace std;
+// A base class for various types of vehicles .
+class vehicle
+{
+int num_wheels ;
+int range ;
+public :
+vehicle (int w, int r)
+{
+num_wheels = w;
+range = r;
+}
+void showv ()
+{
+cout << " Wheels : " << num_wheels << ’\n’;
+cout << " Range : " << range << ’\n’;
+
+}
+};
+enum motor {gas , electric , diesel };
+class motorized : public vehicle
+{
+enum motor mtr ;
+public :
+motorized ( enum motor m, int w, int r) : vehicle (w, r)
+{
+mtr = m;
+}
+void showm ()
+{
+cout << " Motor : ";
+switch (mtr )
+{
+case gas : cout << "Gas \n";
+break ;
+case electric : cout << " Electric \n";
+break ;
+case diesel : cout << " Diesel \n";
+break ;
+}
+}
+};
+class road_use : public vehicle
+{
+int passengers ;
+public :
+road_use (int p, int w, int r) : vehicle (w, r)
+{
+passengers = p;
+}
+void showr ()
+{
+cout << " Passengers : " << passengers << ’\n’;
+}
+};
+enum steering { power , rack_pinion , manual };
+class car : public motorized , public road_use
+{
+enum steering strng ;
+public :
+car ( enum steering s, enum motor m, int w, int r, int p) :
+road_use (p, w, r), motorized (m, w, r), vehicle (w, r)
+{
+strng = s;
+}
+void show ()
+{
+showv ();
+showr ();
+showm ();
+cout << " Steering : ";
+switch ( strng )
+{
+case power : cout << " Power \n";
+break ;
+case rack_pinion : cout << " Rack and Pinion \n";
+break ;
+case manual : cout << " Manual \n";
+break ;
+}
+}
+};
+int main ()
+{
+car c(power , gas , 4 , 500 , 5);
+c. show ();
+return 0;
+}
+```
+## Code :
+
+```
+#include <iostream>
+using namespace std;
+class vehicle {
+protected:
+    int num_wheels;
+    int range;
+
+public:
+    vehicle(int w, int r) {
+        num_wheels = w;
+        range = r;
+    }
+    void showv() {
+        cout << "Wheels: " << num_wheels << '\n';
+        cout << "Range: " << range << '\n';
+    }
+};
+
+enum motor { gas, electric, diesel };
+
+class motorized : virtual public vehicle {
+    enum motor mtr;
+
+public:
+    motorized(enum motor m, int w, int r) : vehicle(w, r) {
+        mtr = m;
+    }
+
+    void showm() {
+        cout << "Motor: ";
+        switch (mtr) {
+            case gas: cout << "Gas\n"; break;
+            case electric: cout << "Electric\n"; break;
+            case diesel: cout << "Diesel\n"; break;
+        }
+    }
+};
+
+class road_use : virtual public vehicle {
+    int passengers;
+
+public:
+    road_use(int p, int w, int r) : vehicle(w, r) {
+        passengers = p;
+    }
+
+    void showr() {
+        cout << "Passengers: " << passengers << '\n';
+    }
+};
+
+enum steering { power, rack_pinion, manual };
+
+class car : public motorized, public road_use {
+    enum steering strng;
+
+public:
+    car(enum steering s, enum motor m, int w, int r, int p)
+        : vehicle(w, r), motorized(m, w, r), road_use(p, w, r) {
+        strng = s;
+    }
+
+    void show() {
+        showv(); 
+        showr();  
+        showm();  
+        cout << "Steering: ";
+        switch (strng) {
+            case power: cout << "Power\n"; break;
+            case rack_pinion: cout << "Rack and Pinion\n"; break;
+            case manual: cout << "Manual\n"; break;
+        }
+    }
+};
+
+int main() {
+    car c(power, gas, 4, 500, 5);
+    c.show();
+    return 0;
+}
+
+```
+
+### Output:
+![image](https://github.com/user-attachments/assets/2d04002f-129c-4871-87fe-f7348047bd96)
+
+### Discussion:
+The issue in your code is caused by multiple inheritance. Both the motorized and road_use classes inherit from vehicle, leading to ambiguity when the derived class car tries to access the members of vehicle. Specifically, this causes the showv() method in car to be ambiguous. To resolve this issue, you can use virtual inheritance to ensure that only one instance of the vehicle class is shared by both motorized and road_use when inherited by car.
+
 
