@@ -710,6 +710,7 @@ Run-time polymorphism, also known as dynamic binding, is a feature in object-ori
 ### Mechanism:
 Virtual Table (vtable):
 The compiler creates a vtable for classes with virtual functions. This table contains pointers to the virtual functions, enabling the program to decide at runtime which function to call based on the actual object type.
+
 Dynamic Dispatch:
 Each object of a class with virtual functions contains a hidden pointer (often called vptr) to its class's vtable. When a virtual function is called, the program looks up the function pointer in the vtable associated with the object, ensuring that the correct function is executed.
 
