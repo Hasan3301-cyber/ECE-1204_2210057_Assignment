@@ -1,6 +1,6 @@
 # Assignment No: 03
 # Date of Submission :15-10-2024
-# Title : Find out the error in code with reason and Fix it
+# Title : Skill check on the topics of operator overloading, inheritance, and virtual functions.
 ## 1. Operator Overloading
 ## Problem No : 01 
 Overload the >> and << shift operator relative to the coord class so that the following
@@ -679,4 +679,99 @@ int main() {
 ### Discussion:
 The issue in this code is caused by multiple inheritance. Both the motorized and road_use classes inherit from vehicle, leading to ambiguity when the derived class car tries to access the members of vehicle. Specifically, this causes the showv() method in car to be ambiguous. To resolve this issue, you can use virtual inheritance to ensure that only one instance of the vehicle class is shared by both motorized and road_use when inherited by car.
 
+# Virtual Function
+## Problem No : 01
+What is a virtual function?
+## Answer :
+A virtual function is a function in a base class that is declared using the keyword virtual and is intended to be overridden in derived classes. When a function is marked as virtual, it allows the derived class to provide its own implementation of that function, enabling polymorphism
 
+## Problem No : 02
+What types of functions cannot be made virtual?
+## Answer :
+Constructors, static functions, friend functions, and non-member functions cannot be made virtual
+#### Constructors:
+Reason: Constructors cannot be virtual because they are responsible for creating the object, including setting up the virtual table (vtable). Virtual dispatch requires an already constructed object, but the object is not fully constructed during the constructor call, making it impossible to use virtual mechanisms.
+#### Static Functions:
+Reason: Static functions belong to the class, not to any specific object instance. Since virtual functions rely on the runtime type of an object (via the vtable), and static functions do not operate on instances, they cannot be made virtual.
+#### Friend Functions:
+Reason: Friend functions are not members of the class but external functions granted access to private members. Since they do not belong to the class hierarchy, they cannot participate in virtual dispatch, which is only applicable to member functions.
+#### Non-Member Functions:
+Reason: Non-member functions are independent of any class and are not part of a class hierarchy. Virtual functions depend on class inheritance and object instances, which non-member functions lack, thus preventing them from being virtual.
+
+
+
+## Problem No : 03
+How does a virtual function help achieve run-time polymorphism? Be specific.
+## Answer :
+Run-time polymorphism, also known as dynamic binding, is a feature in object-oriented programming that allows the system to determine which function to call at runtime based on the actual object type. Virtual functions play a crucial role in achieving this.
+### Mechanism:
+Virtual Table (vtable):
+The compiler creates a vtable for classes with virtual functions. This table contains pointers to the virtual functions, enabling the program to decide at runtime which function to call based on the actual object type.
+Dynamic Dispatch:
+Each object of a class with virtual functions contains a hidden pointer (often called vptr) to its class's vtable. When a virtual function is called, the program looks up the function pointer in the vtable associated with the object, ensuring that the correct function is executed.
+
+
+## Problem No : 04
+What is a pure virtual function?
+## Answer :
+A pure virtual function in C++ is a function that has no implementation in the base class and must be overridden by any derived class that inherits from it. It is used to define an abstract class, which cannot be instantiated on its own but serves as a blueprint for derived classes.:
+#### Syntex:
+```
+class Base {
+public:
+    virtual void display() = 0; 
+};
+```
+## Problem No : 05
+What is an abstract class? What is a polymorphic class?
+## Answer :
+### Abstract Class
+An abstract class in C++ is a class that cannot be instantiated directly and is designed to be inherited by other classes. It typically contains at least one pure virtual function, which forces the derived classes to implement the pure virtual functions. Abstract classes are used to provide a common interface for a group of related classes while leaving the implementation details to the derived classes.
+### Polymorphic Class
+A polymorphic class in C++ is any class that contains at least one virtual function. Polymorphic classes enable runtime polymorphism, where the function that is called is determined at runtime based on the actual object type, rather than the type of reference or pointer.
+
+## Problem No : 06
+Is the following fragment correct? If not, why not?
+```
+class base
+{
+public :
+virtual int (int a) = 0;
+// ...
+};
+class derived : public base
+{
+public :
+int f(int a, int b) { return a*b; }
+// ...
+}:
+```
+## Correct Code :
+```
+class base
+{
+public:
+    virtual int f(int a) = 0;
+};
+
+class derived : public base
+{
+public:
+    int f(int a) override
+    {
+        return a;
+    }
+};
+
+
+```
+
+### Discussion:
+1.	A pure virtual function must have a name, but in this case, the function lacks a name. The correct syntax should include a function name, such as f.
+2.	The pure virtual function and overridden function in derived class must have same and number of same parameters.But on this code have not same parameter.
+3.	The class definition is terminated with : instead of a semicolon (;). The correct syntax for class termination is a semicolon.
+
+## Problem No : 07
+Is the virtual quality inherited?
+## Answer :
+The virtual quality of a member function is indeed inherited by derived classes. This means that if a base class declares a member function as virtual, any derived class that overrides that function will also have it considered as virtual, allowing for polymorphism.
