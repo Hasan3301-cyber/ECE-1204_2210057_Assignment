@@ -11,8 +11,8 @@ ob << integer
 ob >> integer
 
 Make sure your operations shift the x and y values by the amount specified.
-
-## Code :
+## Answer:
+### Code :
 
 ```
 #include <iostream>
@@ -81,8 +81,8 @@ i = x; j = y; k = z;
 ```
 overload the +, -, ++, and – operators for this class. (For the increment and decrement
 operators, overload only the prefix form.)
-
-## Code :
+## Answer:
+### Code :
 
 ```
 #include <iostream>
@@ -170,7 +170,8 @@ int main() {
 Rewrite your answer to Question 2 so that it uses reference parameters  instead  of  value   
 parameters to the operator functions. (Hint: You will need to use friend functions for the
 increment and decrement operators.)
-## Code :
+## Answer:
+### Code :
 
 
 ```
@@ -271,6 +272,7 @@ the number of rooms, and its total square footage. Create derived class called h
 inherits building and also stores the number of bedrooms and the number of bathrooms.
 Next, create a derived class called office that inherits building and also stores the number
 of fire extinguishers and the number of telephones.
+### Answer:
 ## Code :
 
 ```
@@ -433,8 +435,8 @@ ob. show ();
 return 0;
 }
 ```
-
-## Code :
+## Answer:
+### Code :
 
 ```
 #include <iostream>
@@ -587,7 +589,8 @@ c. show ();
 return 0;
 }
 ```
-## Code :
+## Answer:
+### Code :
 
 ```
 #include <iostream>
@@ -746,7 +749,8 @@ int f(int a, int b) { return a*b; }
 // ...
 }:
 ```
-## Correct Code :
+## Answer:
+### Correct Code :
 ```
 class base
 {
