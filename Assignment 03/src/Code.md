@@ -1,4 +1,4 @@
-## Code -1:
+## Code -1.1:
 ```
 #include <iostream>
 using namespace std;
@@ -39,7 +39,7 @@ int main() {
 
 
 ```
-## Code -2:
+## Code -1.2:
 ```
 #include <iostream>
 using namespace std;
@@ -116,7 +116,7 @@ int main() {
 
 
 ```
-## Code-3:
+## Code-1.3:
 ```
 #include <iostream>
 using namespace std;
